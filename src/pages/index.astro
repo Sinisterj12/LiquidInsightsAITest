@@ -1,27 +1,33 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { siteConfig } from '../config/site';
 ---
 
-<BaseLayout title="Liquid Insights - AI Tools & Conferences">
-  <main class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-8">Welcome to Liquid Insights</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <a href="/LiquidInsightsAITest/ai-tools" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h2 class="text-2xl font-semibold mb-4">AI Tools</h2>
-        <p>Discover and explore the latest AI tools and technologies.</p>
-      </a>
-      <a href="/LiquidInsightsAITest/conferences" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h2 class="text-2xl font-semibold mb-4">Conferences</h2>
-        <p>Stay updated with upcoming AI and tech conferences.</p>
-      </a>
-      <a href="/LiquidInsightsAITest/insights" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h2 class="text-2xl font-semibold mb-4">Insights</h2>
-        <p>Get the latest news and insights from the AI industry.</p>
-      </a>
-      <a href="/LiquidInsightsAITest/blog" class="p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-        <h2 class="text-2xl font-semibold mb-4">Blog</h2>
-        <p>Read our latest articles and thoughts on AI and technology.</p>
-      </a>
+<BaseLayout>
+  <main class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        Welcome to {siteConfig.name}
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
+        {siteConfig.description}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      {siteConfig.nav.map((item) => (
+        <a href={`${siteConfig.baseUrl}${item.href}`} class="card group p-6 rounded-xl">
+          <h2 class="text-2xl font-semibold mb-4 text-primary group-hover:text-secondary transition-colors">
+            {item.name}
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400">
+            {item.name === 'AI Tools' && 'Discover and explore the latest AI tools and technologies.'}
+            {item.name === 'Conferences' && 'Stay updated with upcoming AI and tech conferences.'}
+            {item.name === 'Insights' && 'Get the latest news and insights from the AI industry.'}
+            {item.name === 'Blog' && 'Read our latest articles and thoughts on AI and technology.'}
+          </p>
+        </a>
+      ))}
     </div>
   </main>
 </BaseLayout>

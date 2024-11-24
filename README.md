@@ -1,79 +1,107 @@
-# LiquidInsights Project Rebuild Plan
-Liquidinsightsai.com is a purchased domain name and will be used for hosting after website rebuild
+# Liquid Insights
 
-## Project Context
-- **Original Project**: Website for AI Tools and upcomingConferences Directory and an insights news section
-- **Current State**: In transition for rebuild
-- **Target Framework**: Astro
-- **Deployment**: Will be hosted on GitHub Pages with custom domain
-- **Content Management**: TinaCMS will be used for content management
-- **TypeScript**: Will be used for type safety
-- **GitHub Pages**: Will be used for deployment
-- **Custom Domain**: Will be used for hosting
+A modern, customizable website for AI Tools, Conferences, and Industry Insights built with Astro and TinaCMS.
 
-## Project Goals
-1. Create a new project using Astro framework
-2. Integrate TinaCMS for content management
-3. Create a new TinaCMS schema
-4. build entire project for user
-5. easy customization without code changes
-6. extensions to help with making customization easier
+## Features
 
-## User experience
-1. Beginner: Easy to navigate, easy to find what they are looking for
-2. suggest new extensions if it makes customization easier for the user
+- **Easy Customization**
+  - Site-wide configuration in `src/config/site.ts`
+  - Theme support (light/dark mode)
+  - CSS variables for easy styling
+  
+- **Modern Design**
+  - Responsive layout
+  - Beautiful UI components
+  - Smooth animations
+  - TailwindCSS for styling
+  
+- **Performance**
+  - Built with Astro for optimal performance
+  - Static site generation
+  - Fast page loads
+  
+- **Content Management**
+  - TinaCMS integration (coming soon)
+  - Markdown support
+  - Easy content updates
+
+## Quick Start
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Build for production:
+   ```bash
+   npm run build
+   ```
+
+## Customization
+
+### Site Configuration
+
+Edit `src/config/site.ts` to customize:
+- Site details (name, description, URL)
+- Navigation links
+- Social media links
+- SEO settings
+- Theme settings
+
+### Styling
+
+1. **Theme Colors**: Edit CSS variables in `src/styles/global.css`
+2. **Components**: Modify Tailwind classes in component files
+3. **Layout**: Adjust layout in `src/layouts/BaseLayout.astro`
+
+### Content
+
+Each section has its own directory in `src/pages`:
+- `/ai-tools` - AI Tools directory
+- `/conferences` - Upcoming conferences
+- `/insights` - Industry news and insights
+- `/blog` - Blog posts
 
 ## Project Structure
-└──src
-│   └── pages
-│       ├── ai-tools
-│       ├── blog
-│       ├── conferences
-│       ├── insights
-│       ├── index.astro
-│       └── _redirects
-│   └── layouts
-│       ├── BaseLayout.astro
-│       └── _default.astro
-│   └── styles
-│       ├── global.css
-│       └── variables.css
-├── backup
-│   ├── ai-tools
-│   ├── blog
-│   ├── conferences
-│   ├── insights
-│   ├── index.astro
-│   └── _redirects
-├── package.json
-├── package-lock.json
-├── tsconfig.json
-├── .gitignore
-├── .gitattributes
-├── README.md
 
-## Technical Decisions Made
-1. **Framework Choice**: 
-   - Moving to Astro framework
-   - Will integrate TinaCMS for content management
-   - TypeScript will be used for type safety
+```
+src/
+├── components/       # Reusable UI components
+├── config/          # Site configuration
+├── layouts/         # Page layouts
+├── pages/          # Route pages
+├── styles/         # Global styles
+└── types/          # TypeScript types
+```
 
-2. **Deployment Choice**: 
-   - Will be hosted on GitHub Pages with custom domain
-   
-2. **Key Requirements**:
-  easy customization without code changes
-  tinacms for content management
-  github pages for deployment
+## Development
 
-3. **TinaCMS Schema**: 
-   - Will create a new TinaCMS schema for content management
+1. **Local Development**
+   - Run `npm run dev`
+   - Visit `http://localhost:3000`
+   - Changes will hot-reload
 
-4. **Custom Domain**: 
-   - Will be used for hosting
+2. **Testing**
+   - Components are easily testable
+   - Live preview available
 
-5. **GitHub Pages**: 
-   - Will be used for deployment
+3. **Deployment**
+   - Automatic deployment via GitHub Actions
+   - Hosted on GitHub Pages
 
-6. **TypeScript**: 
-   - Will be used for type safety
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## License
+
+MIT License - feel free to use this project for your own website!
